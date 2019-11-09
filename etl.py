@@ -25,9 +25,9 @@ def etl(query, source_conn, target_conn):
 # establish connection with source database
 def etl_process(queries, target_conn, source_db_config, db_platform):
     if db_platform == 'postgres':
-        source = psycopg2.connect(**source_db_config) 
+        source_conn = psycopg2.connect(**source_db_config) 
     elif db_platform == 'sqlite3':
-        source = sqlite3.connect(**source_db_config)
+        source_conn = sqlite3.connect(**source_db_config)
     else: 
         return 'Error: db_platform not recognized.' 
 

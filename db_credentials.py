@@ -1,4 +1,4 @@
-from variables import datawarehouse_name
+from variables import *
 
 #(target db, datawarehouse)
 datawarehouse_db_config = {
@@ -9,26 +9,26 @@ datawarehouse_db_config = {
     'autocommit' : True,
 }
 
-#(source db) postgres
-first_db_config = {
+#(source db) 'postgres'
+locations_db_config = {
     'username': 'postgres',
     'password': 'postgres',
-    'database': '',
+    'database': 'locations',
     'host': 'localhost',
 }
 
-#(source db)
-second_db_config = {
+#(source db) 'postgres'
+patrons_db_config = {
     'username': 'postgres',
     'password': 'postgres',
-    'database': '',
+    'database': 'patrons',
     'host': 'localhost',
 }
 
-# (source db)
-third_db_config = {
-    'username': 'sqlite3',
-    'password': 'sqlite3',
-    'database': '',
-    'host': '',
+# (source db) 'postgres'
+librarymanager_db_config = {
+    'username': 'librarian',
+    'password': '{}.format(librarian_password)',
+    'database': 'librarymanager',
+    'host': 'localhost',
 }

@@ -1,30 +1,30 @@
 #sql queries by database
 
-#first db
-first_db_selection = ('''
-    SELECT blah, blah, blah FROM table;
+#locations db queries
+locations_db_selection = ('''
+    SELECT branch_name FROM public.branch_locations ORDER BY branch_name ASC;
 ''')
 
-first_db_insert = ('''
-    INSERT INTO table (blah, blah, blah) VALUES (???)
+locations_db_insert = ('''
+    INSERT INTO public.libary_system_information (library_location_name) VALUES (???)
 ''')
 
-#second db
-second_db_selection = ('''
-    SELECT blah, blah, blah FROM table WHERE blah;
+#patrons db queries
+patrons_db_selection = ('''
+    SELECT email_address FROM public.patron_list;
 ''')
 
-second_db_insert = ('''
-    INSERT INTO table (blah, blah, blah) VALUES (???)
+patrons_db_insert = ('''
+    INSERT INTO public.libary_system_information (patron_email_list) VALUES (???)
 ''')
 
-#third db
-third_db_selection = ('''
-    SELECT blah, blah, blah FROM table;
+#librarymanager db queries
+librarymanager_db_selection = ('''
+    SELECT title FROM public."Books" ORDER BY title ASC;
 ''')
 
-third_db_insert = ('''
-    INSERT INTO table (blah, blah, blah) VALUES (???)
+librarymanager_db_insert = ('''
+    INSERT INTO public.libary_system_information (book_inventory) VALUES (???)
 ''')
 
 #exports queries
@@ -34,11 +34,11 @@ class SqlQuery:
         self.load_query = load_query
 
 #SqlQuery instances per database
-first_db_query = SqlQuery(first_db_selection, first_db_insert)
-second_db_query = SqlQuery(second_db_selection, second_db_insert)
-third_db_query = SqlQuery(third_db_selection, third_db_insert)
+locations_db_query = SqlQuery(locations_db_selection, locations_db_insert)
+patrons_db_query = SqlQuery(patrons_db_selection, patrons_db_insert)
+librarymanager_db_query = SqlQuery(librarymanager_db_selection, librarymanager_db_insert)
 
 #store queries as list for iteration
-first_db_queries = [first_db_query]
-second_db_queries = [second_db_query]
-third_db_queries = [third_db_query]
+locations_db_queries = [locations_db_query]
+patrons_db_queries = [patrons_db_query]
+librarymanager_db_queries = [librarymanager_db_query]
