@@ -1,34 +1,43 @@
-from variables import *
+from variables import datawarehouse_name
 
 #(target db, datawarehouse)
 datawarehouse_db_config = {
-    'username': 'postgres',
-    'password': 'postgres',
-    'database': '{}.format(datawarehouse_name)',
+    'dbname': '{}'.format(datawarehouse_name),
     'host': 'localhost',
-    'autocommit' : True,
+    'port': '5432',
+    'user': 'toniagonzalez',
+    'password': '',
 }
 
 #(source db) 'postgres'
-locations_db_config = {
-    'username': 'postgres',
-    'password': 'postgres',
-    'database': 'locations',
-    'host': 'localhost',
-}
+locations_db_config = [
+    {
+        'dbname': 'locations',
+        'host': 'localhost',
+        'port': '5432',
+        'user': 'toniagonzalez',
+        'password': '',
+    }
+]
 
 #(source db) 'postgres'
-patrons_db_config = {
-    'username': 'postgres',
-    'password': 'postgres',
-    'database': 'patrons',
-    'host': 'localhost',
-}
+patrons_db_config = [
+    {
+        'dbname': 'patrons',
+        'host': 'localhost',
+        'port': '5432',
+        'user': 'toniagonzalez',
+        'password': '',
+    }
+]
 
 # (source db) 'postgres'
-librarymanager_db_config = {
-    'username': 'librarian',
-    'password': '{}.format(librarian_password)',
-    'database': 'librarymanager',
-    'host': 'localhost',
-}
+librarymanager_db_config = [
+    {
+        'dbname': 'librarymanager',
+        'host': 'localhost',
+        'port': '5432',
+        'user': 'toniagonzalez',
+        'password': '',
+    }
+]
