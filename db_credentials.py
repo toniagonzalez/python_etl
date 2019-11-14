@@ -1,43 +1,43 @@
-from variables import datawarehouse_name
+from variables import *
 
 #(target db, datawarehouse)
 datawarehouse_db_config = {
     'dbname': '{}'.format(datawarehouse_name),
-    'host': 'localhost',
-    'port': '5432',
-    'user': 'toniagonzalez',
-    'password': '',
+    'host': '{}'.format(warehouse_host),
+    'port': '{}'.format(warehouse_port),
+    'user': '{}'.format(warehouse_user),
+    'password': '{}'.format(warehouse_password),
 }
 
 #(source db) 'postgres'
-locations_db_config = [
+source1_db_config = [
     {
-        'dbname': 'locations',
-        'host': 'localhost',
-        'port': '5432',
-        'user': 'toniagonzalez',
-        'password': '',
+        'dbname': '{}'.format(source1_name),
+        'host': '{}'.format(source1_host),
+        'port': '{}'.format(source1_port),
+        'user': '{}'.format(source1_user),
+        'password': '{}'.format(source1_password),
     }
 ]
 
 #(source db) 'postgres'
-patrons_db_config = [
+source2_db_config = [
     {
-        'dbname': 'patrons',
-        'host': 'localhost',
-        'port': '5432',
-        'user': 'toniagonzalez',
-        'password': '',
+        'dbname': '{}'.format(source2_name),
+        'host': '{}'.format(source2_host),
+        'port': '{}'.format(source2_port),
+        'user': '{}'.format(source2_user),
+        'password': '{}'.format(source2_password),
     }
 ]
 
-# (source db) 'postgres'
-librarymanager_db_config = [
+#(source db) 'postgres'
+source3_db_config = [
     {
-        'dbname': 'librarymanager',
-        'host': 'localhost',
-        'port': '5432',
-        'user': 'toniagonzalez',
-        'password': '',
+        'dbname': '{}'.format(source3_name),
+        'host': '{}'.format(source3_host),
+        'port': '{}'.format(source3_port),
+        'user': '{}'.format(source3_user),
+        'password': '{}'.format(source3_password),
     }
 ]

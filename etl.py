@@ -21,7 +21,7 @@ def etl(query, source_conn, target_conn):
         target_cursor = target_conn.cursor()
         target_cursor.executemany(query.load_query, datalist)
         print(datalist)
-        target_conn.commit()
+        # target_conn.commit()
         print('Data succesfully loaded to warehouse db.')
         target_cursor.close()
     else:

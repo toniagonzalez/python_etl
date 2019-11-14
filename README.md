@@ -7,5 +7,5 @@ I created this simple ETL(Extract Transform Load) pipeline using Python to trans
 - [X] Write basic functions to extract and load data
 - [X] Write SELECT and INSERT SQL queries for postgresql  
 - [ ] Fix bug in format of loaded content 
-- [ ] Switch code from relying on specific db types to template format
+- [X] Switch code from relying on specific db types to template format
 - [ ] Set up Docker container
