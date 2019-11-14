@@ -10,18 +10,14 @@ from variables import datawarehouse_name
 def etl(query, source_conn, target_conn):
     source_cursor= source_conn.cursor()
     source_cursor.execute(query.select_query)
-    rows = source_cursor.fetchall()
-    #convert data into list
-    data = [row[0] for row in rows]
-    datalist = ','.join("('%s')" % x for x in data)
+    data = source_cursor.fetchall()
     source_cursor.close()
 
     # if data load and commit data into warehouse; else return empty message
     if data:
         target_cursor = target_conn.cursor()
-        target_cursor.executemany(query.load_query, datalist)
-        print(datalist)
-        # target_conn.commit()
+        target_cursor.executemany(query.load_query, data)
+        target_conn.commit()
         print('Data succesfully loaded to warehouse db.')
         target_cursor.close()
     else:
